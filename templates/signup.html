@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<body>
+  <h1>Cadastre-se</h1>
+  <div>
+    {% include 'messages.html' %}
+  </div>
+  <form action="register" method="POST">
+    {% csrf_token %}
+    <h6>Nome de usuário: </h6>
+      <input name="username" type="text" placeholder="Nome de usuário" />
+    <h6>E-mail: </h6>
+      <input name="email" type="email" placeholder="e-mail@e-mail.com" />
+    <h6>Senha: </h6>
+      <input name="password" type="password" placeholder="********" />
+    <h6>Confirme a senha: </h6>
+      <input name="password2" type="password" placeholder="********" />
+    <br>
+    <button type="submit">Cadastre-se</button>
+  </form>
+
+</body>
+{% endblock content %}

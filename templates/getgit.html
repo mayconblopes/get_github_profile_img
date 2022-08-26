@@ -1,0 +1,18 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+<h2 style="text-align: center">Bem vindo(a), {{user.username|title}}.</h2>
+<body>
+    <form class="default_form" action="" method="POST">
+        {% csrf_token %}
+        <h3>Get Github Profile Pic</h3>
+        {% include 'messages.html' %}
+        <input name="profileusername" type="text" size="30" placeholder="Digite o username do Github"/>
+        <button type="submit">Enviar</button>
+    </form>
+    <br>
+
+</body>
+
+{% endblock content %}

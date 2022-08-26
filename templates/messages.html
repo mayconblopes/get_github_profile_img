@@ -1,0 +1,15 @@
+{% load static %}
+
+{% if messages %}
+
+    {% for message in messages %}
+        {% if message.tags == 'error' %}
+            <p style="color: tomato"> {{ message }}</p>
+        {% elif message.tags == 'success' %}
+            <p style="color: blueviolet"> {{ message }}</p>
+        {% else %}
+            <p style="color: black"> {{ message }}</p>
+        {% endif %}
+    {% endfor %}
+
+{% endif %}
